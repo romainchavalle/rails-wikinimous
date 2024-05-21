@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light bg-light mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand">Wikinimous</a>
+      <button class="btn btn-primary">
+        <%= link_to("New article", new_article_path(), class:"text-decoration-none text-light")%>
+      </button>
+  </div>
+  </nav>
+
+<div class="container d-flex row row-cols-2 row-cols-md-3 g-4 justify-content-center">
+  <% @articles.each do |article| %>
+    <div class="card w-75 m-3 color:white!" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to(article.title, article_path(article)) %></h5>
+        <p class="card-text"><%= article.content %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
